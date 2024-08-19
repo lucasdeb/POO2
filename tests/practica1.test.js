@@ -5,14 +5,14 @@ const creaResta = (x) => {
   };
 };
 const repeat = (functionToRepeat, n) => {
-  var arr = [];
+  const arr = [];
   for (let index = 1; index < n + 1; index++) {
     arr.push(functionToRepeat(index));
   }
   return arr;
 };
 const printString = (i) => { return "Execution Number: " + i };
-const howManyTimesAppear = (arr,num) => {
+const howManyTimesAppear = (arr, num) => {
   var i = 0;
   var lst = arr.filter(i => i === num);
   return lst.length
@@ -73,6 +73,7 @@ describe("ejercicio 4", () => {
 
   test("inciso c", () => {
     const ejercicioC = (letra) => {
+      // esta bien asi??
       var original = pilotos.filter(piloto => piloto.includes(letra));
       var nuevo = original.concat(pilotos.filter(piloto => piloto.includes(letra.toUpperCase())));
       return nuevo
@@ -88,7 +89,7 @@ describe("ejercicio 4", () => {
 
   test("inciso d", () => {
     const ejercicioD = (lista) => {
-      lst =[];
+      lst = [];
       lista.map(driver => lst.push(pilotos.includes(driver)));
       return lst
     };
@@ -100,8 +101,8 @@ describe("ejercicio 4", () => {
   });
   test("inciso e", () => {
     const corregirPilotos = (pilotos) => {
-      pilotos.splice(4,1,"Hamilton");
-      pilotos.splice(1,1,"Perez");
+      pilotos.splice(4, 1, "Hamilton");
+      pilotos.splice(1, 1, "Perez");
       return pilotos
     };
 
@@ -132,8 +133,9 @@ test("ejercicio 6", () => {
   const array1 = [4, 8, 2, 13, 20];
   const array2 = [4, 8, 2, -5, 20];
   const ejercicio6 = (arr) => {
+    // esta bien usar esto?? Si
     var min = Math.min(...arr);
-    return arr.map(num => num+min)
+    return arr.map(num => num + min)
   };
 
   expect(ejercicio6(array1)).toEqual([6, 10, 4, 15, 22]);
@@ -178,11 +180,11 @@ describe("ejercicio 7", () => {
       "Florencia Bonsegundo",
     ];
     const ejercicioB = (arr) => {
-      var nom = arr.map(function(pal){
+      var nom = arr.map(function (pal) {
         var nombre = pal.split(" ").reverse();
         arr.push(nombre[0] + " " + nombre[1]);
       });
-      arr.splice(0,7);
+      arr.splice(0, 7);
       return arr
     };
     expect(ejercicioB(personas)).toEqual([
